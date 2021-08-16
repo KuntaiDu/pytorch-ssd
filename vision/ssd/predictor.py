@@ -21,6 +21,8 @@ class Predictor:
         else:
             self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+        assert self.device == torch.device("cpu")
+
         self.net.to(self.device)
         self.net.eval()
 
